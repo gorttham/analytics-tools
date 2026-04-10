@@ -1,4 +1,5 @@
 ---
+name: init-analytics
 description: Run the full analytics pipeline on a dataset in raw/. Profiles, finds insights, and generates initial charts. Use at the start of any analytics session.
 ---
 

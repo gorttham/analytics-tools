@@ -1,0 +1,2 @@
+# maybe connected to mcp but doesnt mean you need the plugin (eg: github)
+claude mcp list
