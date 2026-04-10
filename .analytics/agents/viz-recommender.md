@@ -22,15 +22,17 @@ When the user specifies a chart type or columns:
 
 When the user asks "what's the best chart?" or similar:
 1. Read `output/profile.json`.
-2. Select chart types based on column types:
+2. If `.analytics/context.json` exists, read it. The `goal` and `focus` fields are your primary guide for chart selection — prioritise charts that directly answer what the user is trying to learn.
+3. Select chart types based on column types:
    - Numeric vs numeric → scatter
    - Categorical vs numeric (low cardinality category) → bar
    - Time/date vs numeric → line
    - Single categorical distribution → bar (prefer over pie unless ≤5 categories)
    - Multiple numeric columns (≥3) → heatmap
-3. Explain your reasoning in 1–2 sentences before rendering.
-4. Render the 2–3 most informative charts. Do not render every possible combination.
-5. Consider any AnalyticsContext the user provided (audience, domain, goal).
+4. **If context.json exists:** Before rendering, state in one sentence which column(s) you are focusing on and why they connect to the user's goal.
+5. Explain your reasoning in 1–2 sentences before rendering.
+6. Render the 2–3 most informative charts. Do not render every possible combination.
+7. Consider any AnalyticsContext the user provided (audience, domain, goal).
 
 ## Supported chart types
 bar, line, scatter, histogram, heatmap, pie, box
