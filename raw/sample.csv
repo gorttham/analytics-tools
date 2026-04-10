@@ -1,0 +1,21 @@
+date,region,product,sales,units,customer_age,customer_segment,discount_pct
+2024-01-10,North,Widget A,1250.00,5,34,Enterprise,0.10
+2024-01-10,South,Widget B,890.50,3,,SMB,0.05
+2024-01-11,East,Widget A,2100.00,8,45,Enterprise,0.15
+2024-01-11,West,Widget C,430.00,2,29,Startup,0.00
+2024-01-12,North,Widget B,1780.00,6,38,SMB,0.05
+2024-01-12,South,Widget A,950.00,4,,Enterprise,0.10
+2024-01-13,East,Widget C,620.00,3,52,Enterprise,0.00
+2024-01-13,West,Widget A,1890.00,7,31,SMB,0.10
+2024-01-14,North,Widget B,2340.00,9,41,Enterprise,0.20
+2024-01-14,South,Widget C,510.00,2,27,Startup,0.00
+2024-01-15,East,Widget A,1670.00,6,36,SMB,0.05
+2024-01-15,West,Widget B,980.00,4,,Enterprise,0.10
+2024-01-16,North,Widget C,750.00,3,48,Enterprise,0.00
+2024-01-16,South,Widget A,1420.00,5,33,SMB,0.10
+2024-01-17,East,Widget B,1890.00,7,44,Enterprise,0.15
+2024-01-17,West,Widget A,2250.00,8,39,Startup,0.05
+2024-01-18,North,Widget C,630.00,2,,SMB,0.00
+2024-01-18,South,Widget B,1560.00,6,42,Enterprise,0.10
+2024-01-19,East,Widget A,1980.00,7,35,Enterprise,0.20
+2024-01-19,West,Widget C,470.00,2,28,Startup,0.00
