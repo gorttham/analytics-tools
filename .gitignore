@@ -1,6 +1,11 @@
 # Claude Code personal overrides (never commit — contains local paths/preferences)
 .claude/settings.local.json
 
+# Local session files (not for remote)
+MEMORY.md
+claude help.txt
+docs/superpowers/
+
 # Python
 __pycache__/
 *.py[cod]
