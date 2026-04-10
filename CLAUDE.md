@@ -32,12 +32,22 @@ analytics/
 - **Context object**: Visualization recommender accepts a `AnalyticsContext` (domain, goal, audience) to weight recommendations — this is the primary way to influence output without changing code
 - **Output format**: Recommendations return ranked list of `(chart_type, rationale, config_hints)` tuples, not raw chart code
 
+## Analytics Skills
+
+This project includes a self-contained analytics toolkit in `.analytics/`. The following commands are available — when a user types one of these, read and follow the corresponding skill file:
+
+| Command | Skill file |
+|---|---|
+| `/init-analytics` | `.analytics/skills/init-analytics/SKILL.md` |
+| `/analytics:visualize` | `.analytics/skills/visualize/SKILL.md` |
+| `/analytics:report` | `.analytics/skills/report/SKILL.md` |
+| `/analytics:improve` | `.analytics/skills/improve/SKILL.md` |
+
+Agents used by these skills live in `.analytics/agents/`. Python tools live in `.analytics/tools/`.
+
 ## Development Commands
 
-_(To be filled in once the stack is chosen — likely Python with pytest, ruff, and optional notebook support)_
-
 ```bash
-# Example placeholders — update when initialized
 pip install -e ".[dev]"
 pytest tests/
 ruff check .
