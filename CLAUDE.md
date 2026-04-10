@@ -38,7 +38,6 @@ This project includes a self-contained analytics toolkit in `.analytics/`. The f
 
 | Command | Skill file |
 |---|---|
-| `/init-analytics` | `.analytics/skills/init-analytics/SKILL.md` |
 | `/analytics:visualize` | `.analytics/skills/visualize/SKILL.md` |
 | `/analytics:report` | `.analytics/skills/report/SKILL.md` |
 | `/analytics:improve` | `.analytics/skills/improve/SKILL.md` |
