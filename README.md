@@ -1,6 +1,6 @@
 # analytics-tools
 
-A drop-in analytics toolkit for [Claude Code](https://claude.ai/code). Drop a dataset into `raw/`, run one command, and get a plain-English summary of your data, key insights, charts, and a shareable HTML report — no coding required.
+A drop-in analytics toolkit for [Claude Code](https://claude.ai/code). Drop a dataset into `raw/`, run one command, and get a focused plain-English summary of your data, key insights, charts, and a shareable HTML report — no coding required.
 
 ---
 
@@ -41,7 +41,32 @@ raw/
 /init-analytics
 ```
 
-Claude will profile your data, surface key insights, generate charts, and deliver a plain-English summary.
+Claude will ask two quick questions — what you're trying to learn and what the data represents — then propose a focused investigation plan. Once you confirm, it profiles the data, surfaces goal-relevant insights, generates charts, and delivers a plain-English summary.
+
+---
+
+## How it works
+
+Every `/init-analytics` session starts with a short intake conversation:
+
+```
+Claude: Before I dig into the data — what are you trying to learn from it?
+You:    I want to know which products are underperforming by region.
+
+Claude: Got it. What does this data represent?
+You:    Daily retail sales across 4 regions.
+
+Claude: Here's my plan of attack:
+        → Compare sales and units by product across all regions
+        → Flag products with consistently low sales or high discount dependency
+        → Highlight regional outliers
+        Does this match what you're after?
+You:    Yes.
+
+→ Analysis begins, focused on your goal.
+```
+
+Your goal and domain are saved to `.analytics/context.json` and used by every downstream step — profiling highlights the columns that matter, insights lead with what's relevant to your question, and charts are chosen to answer it directly.
 
 ---
 
@@ -49,7 +74,7 @@ Claude will profile your data, surface key insights, generate charts, and delive
 
 | Command | What it does |
 |---|---|
-| `/init-analytics` | Full pipeline: profile → insights → charts → summary |
+| `/init-analytics` | Full pipeline: intake conversation → profile → insights → charts → summary |
 | `/analytics:visualize` | Generate a specific chart or ask Claude to recommend one |
 | `/analytics:report` | Save a self-contained HTML report of the session |
 | `/analytics:improve` | Review and fix any logged errors or limitations |
@@ -75,6 +100,8 @@ output/
   cleaned.csv           # cleaned dataset (if you asked Claude to clean)
   charts/               # .html (interactive) and .png (static) charts
   reports/              # self-contained HTML report, safe to email or share
+.analytics/
+  context.json          # your stated goal and domain (persists across sessions)
 ```
 
 `raw/` is read-only — your source files are never modified.
